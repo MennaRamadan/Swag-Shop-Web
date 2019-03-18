@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 //services
 import HttpService from '../services/http-service';
@@ -30,7 +29,7 @@ class App extends Component {
     //if success call products function if not call error function
     //setstate used to reload data or while refresh 
     http.getProducts().then(data =>{
-      var self= this; 
+      // var self= this; 
       this.setState({products: data})
       console.log(data);
     }, err => {
@@ -40,9 +39,9 @@ class App extends Component {
 
   productList = ()=>{
     const list = this.state.products.map((product) =>
-      <div className="col-sm-3" key={product._id}>
+      <div className="col-sm-4" key={product._id}>
         {/* <Product title={product.title} price={product.price} imgUrl={product.imgUrl}></Product> */}
-        <Product product></Product>
+        <Product product={product}></Product>
       </div>
     )
     return (list);

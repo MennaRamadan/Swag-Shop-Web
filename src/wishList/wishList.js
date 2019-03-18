@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './wishList.css';
 import ProductCondensed from '../productCondensed/productCondensed'
-import DataService from '../services/data service';
 import NotificationService , {NOTIF_WISHLIST_CHANGED} from '../services/notification service';
 
 let ns = new NotificationService();

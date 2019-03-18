@@ -12,7 +12,7 @@ class Product extends Component{
         super(props);
         this.state = {onWishList: ds.itemOnWishList()};
         //Bind Function
-        this.onButtonClicke = this.onButtonClicke.bind(this);
+        this.onButtonClick = this.onButtonClick.bind(this);
         this.onWishListChanged = this.onWishListChanged.bind(this);
     }
 
@@ -28,7 +28,7 @@ class Product extends Component{
         this.setState({onWishList: ds.itemOnWishList(this.props.product)});
     }
 
-    onButtonClicke= () => {
+    onButtonClick= () => {
         if(this.state.onWishList){
             ds.removeWishListItem(this.props.Product)
         }
@@ -55,7 +55,7 @@ class Product extends Component{
                 <div className="card-block">
                     <h4 className="card-title">{this.props.product.title}</h4>
                     <p className="card-text">Prixe: ${this.props.product.price}</p>
-                    <a href="#" onClick={() => this.onButtonClicke()} className={btnClass}>{this.state.onWishList? "Remove from WishList": "Add to Cart"}</a>
+                    <a onClick={() => this.onButtonClick()} className={btnClass}>{this.state.onWishList ? "Remove from WishList": "Add to Cart"}</a>
                 </div>
             </div>
         )
